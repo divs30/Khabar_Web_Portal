@@ -1,0 +1,38 @@
+
+<%- include("partials/header"); -%>
+
+
+    <h1><%=title%></h1>
+    <p><%=content%></p>
+     <form action="/facebook-share" method = "post">
+      <label >title</label><br><input type="text" name="title" value = "<%=title%>">
+      <br><br>
+      <label >content</label><br><input type="text" name="content" value = "<%=content%>">
+      <button type="submit" class= "btn btn-primary">share on facebook</button>
+
+     </form>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="<%=url%>" 
+        data-layout="button_count">
+        </div>
+
+
+     
+   <!-- "https://www."+"localhost:3000/posts/<%=id%> 
+  https://freekaamaal.com/freebie --> 
+
+  <!-- data-href= "https://www.your-domain.com/your-page.html"  -->
+ 
+
+<%- include("partials/footer"); -%>
